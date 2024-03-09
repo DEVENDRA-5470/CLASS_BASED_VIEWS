@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+Sign up here 
+<hr>
+<form method="POST" novalidate>
+    {% csrf_token %}
+    
+    <label for="">{{ form.username.label_tag }}</label>
+    {{ form.username }}
+    {{ form.username.errors }}
+    <br><br>
+
+    <label for="">{{ form.email.label_tag }}</label>
+    {{ form.email }}
+    {{ form.email.errors }}
+    <br><br>
+
+    <label for="">{{ form.password1.label_tag }}</label>
+    {{ form.password1 }}
+    {{ form.password1.errors }}
+    <br><br>
+
+    <label for="">{{ form.password2.label_tag }}</label>
+    {{ form.password2 }}
+    {{ form.password2.errors }}
+    <br><br>
+
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+</form>
+
+
+{% endblock content %}

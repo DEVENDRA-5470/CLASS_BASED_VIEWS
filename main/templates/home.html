@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+Home Page
+<br>
+
+{% for i in data %}
+{{i.stu_name}}
+{{i.stu_class}}
+{{i.stu_age}}
+<a href="{% url 'delete_view' i.id %}">Delete</a>
+<a href="{% url 'update_view' i.id %}">Update</a>
+{% endfor %}
+{% endblock content %}
